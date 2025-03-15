@@ -91,4 +91,7 @@ type AgentInfo = Agent & {
 
 type AgentInfoList = AgentInfo[];
 
-export { AgentInfoList, AgentInfo, GPUInfo, CreateSubTask };
+
+// esline-disable-next-line
+//
+export type { AgentInfoList, AgentInfo, GPUInfo };

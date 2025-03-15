@@ -11,11 +11,6 @@ interface SubTaskListProps {
 }
 
 export default function SubTaskList({ taskId, subtasks, onBack }: SubTaskListProps) {
-    // Filter subtasks by status
-    const workingSubtasks = subtasks.filter(subtask => subtask.is_working);
-    const stoppedSubtasks = subtasks.filter(subtask => !subtask.is_working);
-    const notRespondingSubtasks = subtasks.filter(subtask => !subtask.is_responding);
-    const completedSubtasks = subtasks.filter(subtask => subtask.result !== null);
 
     return (
         <div className='space-y-6'>
@@ -31,10 +26,6 @@ export default function SubTaskList({ taskId, subtasks, onBack }: SubTaskListPro
                     <h3 className='font-semibold text-lg'>Task {taskId} Subtasks</h3>
                 </div>
                 <div className='flex items-center space-x-4 text-sm'>
-                    <div>Working: {workingSubtasks.length}</div>
-                    <div>Stopped: {stoppedSubtasks.length}</div>
-                    <div>Not Responding: {notRespondingSubtasks.length}</div>
-                    <div>Completed: {completedSubtasks.length}</div>
                 </div>
             </div>
 
