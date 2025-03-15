@@ -4,10 +4,14 @@ WORKDIR /app
 
 # Install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 # Copy source code
 COPY . .
+
+# Set environment variables
+ARG NODE_ENV
+ENV NODE_ENV=$NODE_ENV
 
 # Build the application
 RUN npm run build
